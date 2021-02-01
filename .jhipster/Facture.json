@@ -1,0 +1,60 @@
+{
+  "name": "Facture",
+  "fields": [
+    {
+      "fieldName": "numero",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "unique",
+        "required"
+      ]
+    },
+    {
+      "fieldName": "dateDelivrance",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateLimitePaiement",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "consommation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "etat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeFacture",
+      "fieldType": "TypeFacture",
+      "fieldValues": "SENELEC,SDE,SONATEL"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "reclamation",
+      "otherEntityRelationshipName": "facture",
+      "relationshipName": "facture"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "facture",
+      "relationshipName": "client",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210201165915",
+  "entityTableName": "facture",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

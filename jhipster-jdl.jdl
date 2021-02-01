@@ -1,0 +1,39 @@
+
+entity Client {
+	nom String,
+    prenom String,
+    adresse String,
+    login String,
+    password String
+}
+entity Admin {
+	nom String,
+    prenom String,
+    login String,
+    password String
+}
+entity Facture {
+	numero Integer unique required,
+    dateDelivrance Instant,
+    dateLimitePaiement Instant,
+    consommation String,
+    etat String,
+    typeFacture TypeFacture
+}
+enum TypeFacture {
+	SENELEC, SDE, SONATEL
+}
+entity Reclamation {
+	objet String,
+	libelle String
+}
+
+relationship OneToMany {
+	Client{facture} to Facture{client}
+}
+relationship OneToMany {
+	Facture{facture} to Reclamation{facture}
+}
+relationship OneToMany {
+	Client{reclamation} to Reclamation{client}
+}

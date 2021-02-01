@@ -1,0 +1,10 @@
+{
+  "gestFactureProjectApp": {
+    "TypeFacture": {
+      "null": "",
+      "SENELEC": "SENELEC",
+      "SDE": "SDE",
+      "SONATEL": "SONATEL"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="admin">
+            <h2><span jhiTranslate="gestFactureProjectApp.admin.detail.title">Admin</span> {{ admin.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestFactureProjectApp.admin.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ admin.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestFactureProjectApp.admin.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ admin.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestFactureProjectApp.admin.login">Login</span></dt>
+                <dd>
+                    <span>{{ admin.login }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestFactureProjectApp.admin.password">Password</span></dt>
+                <dd>
+                    <span>{{ admin.password }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/admin', admin.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

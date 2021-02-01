@@ -1,0 +1,29 @@
+{
+  "gestFactureProjectApp": {
+    "facture": {
+      "home": {
+        "title": "Factures",
+        "createLabel": "Create a new Facture",
+        "createOrEditLabel": "Create or edit a Facture",
+        "notFound": "No Factures found"
+      },
+      "created": "A new Facture is created with identifier {{ param }}",
+      "updated": "A Facture is updated with identifier {{ param }}",
+      "deleted": "A Facture is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Facture {{ id }}?"
+      },
+      "detail": {
+        "title": "Facture"
+      },
+      "numero": "Numero",
+      "dateDelivrance": "Date Delivrance",
+      "dateLimitePaiement": "Date Limite Paiement",
+      "consommation": "Consommation",
+      "etat": "Etat",
+      "typeFacture": "Type Facture",
+      "facture": "Facture",
+      "client": "Client"
+    }
+  }
+}

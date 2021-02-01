@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="client">
+            <h2><span jhiTranslate="gestFactureProjectApp.client.detail.title">Client</span> {{ client.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestFactureProjectApp.client.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ client.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestFactureProjectApp.client.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ client.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestFactureProjectApp.client.adresse">Adresse</span></dt>
+                <dd>
+                    <span>{{ client.adresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestFactureProjectApp.client.login">Login</span></dt>
+                <dd>
+                    <span>{{ client.login }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestFactureProjectApp.client.password">Password</span></dt>
+                <dd>
+                    <span>{{ client.password }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/client', client.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
