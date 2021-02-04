@@ -1,17 +1,4 @@
 
-entity Client {
-	nom String,
-    prenom String,
-    adresse String,
-    login String,
-    password String
-}
-entity Admin {
-	nom String,
-    prenom String,
-    login String,
-    password String
-}
 entity Facture {
 	numero Integer unique required,
     dateDelivrance Instant,
@@ -29,11 +16,11 @@ entity Reclamation {
 }
 
 relationship OneToMany {
-	Client{facture} to Facture{client}
+	User{facture} to Facture
 }
 relationship OneToMany {
 	Facture{facture} to Reclamation{facture}
 }
 relationship OneToMany {
-	Client{reclamation} to Reclamation{client}
+	User{reclamation} to Reclamation
 }

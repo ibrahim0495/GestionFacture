@@ -1,7 +1,7 @@
 package com.projet.si.repository;
 
 import com.projet.si.domain.Facture;
-
+import java.util.List;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -11,4 +11,6 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface FactureRepository extends JpaRepository<Facture, Long> {
+    @Query("select facture from Facture facture where facture.user.login = ?#{principal.username}")
+    List<Facture> findByUserIsCurrentUser();
 }

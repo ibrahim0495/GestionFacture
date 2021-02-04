@@ -47,10 +47,6 @@ public class CacheConfiguration {
             createCache(cm, com.projet.si.domain.User.class.getName());
             createCache(cm, com.projet.si.domain.Authority.class.getName());
             createCache(cm, com.projet.si.domain.User.class.getName() + ".authorities");
-            createCache(cm, com.projet.si.domain.Client.class.getName());
-            createCache(cm, com.projet.si.domain.Client.class.getName() + ".factures");
-            createCache(cm, com.projet.si.domain.Client.class.getName() + ".reclamations");
-            createCache(cm, com.projet.si.domain.Admin.class.getName());
             createCache(cm, com.projet.si.domain.Facture.class.getName());
             createCache(cm, com.projet.si.domain.Facture.class.getName() + ".factures");
             createCache(cm, com.projet.si.domain.Reclamation.class.getName());

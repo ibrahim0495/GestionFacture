@@ -33,7 +33,7 @@ export class ReclamationUpdatePage {
   libelleInput = element(by.id('field_libelle'));
 
   factureSelect = element(by.id('field_facture'));
-  clientSelect = element(by.id('field_client'));
+  userSelect = element(by.id('field_user'));
 
   async getPageTitle(): Promise<string> {
     return this.pageTitle.getAttribute('jhiTranslate');
@@ -71,20 +71,20 @@ export class ReclamationUpdatePage {
     return await this.factureSelect.element(by.css('option:checked')).getText();
   }
 
-  async clientSelectLastOption(): Promise<void> {
-    await this.clientSelect.all(by.tagName('option')).last().click();
+  async userSelectLastOption(): Promise<void> {
+    await this.userSelect.all(by.tagName('option')).last().click();
   }
 
-  async clientSelectOption(option: string): Promise<void> {
-    await this.clientSelect.sendKeys(option);
+  async userSelectOption(option: string): Promise<void> {
+    await this.userSelect.sendKeys(option);
   }
 
-  getClientSelect(): ElementFinder {
-    return this.clientSelect;
+  getUserSelect(): ElementFinder {
+    return this.userSelect;
   }
 
-  async getClientSelectedOption(): Promise<string> {
-    return await this.clientSelect.element(by.css('option:checked')).getText();
+  async getUserSelectedOption(): Promise<string> {
+    return await this.userSelect.element(by.css('option:checked')).getText();
   }
 
   async save(): Promise<void> {

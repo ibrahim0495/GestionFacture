@@ -20,9 +20,7 @@
       "prenom": "Prenom",
       "adresse": "Adresse",
       "login": "Login",
-      "password": "Password",
-      "facture": "Facture",
-      "reclamation": "Reclamation"
+      "password": "Password"
     }
   }
 }

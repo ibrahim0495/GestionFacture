@@ -47,7 +47,7 @@ describe('Facture e2e test', () => {
       factureUpdatePage.setConsommationInput('consommation'),
       factureUpdatePage.setEtatInput('etat'),
       factureUpdatePage.typeFactureSelectLastOption(),
-      factureUpdatePage.clientSelectLastOption(),
+      factureUpdatePage.userSelectLastOption(),
     ]);
 
     expect(await factureUpdatePage.getNumeroInput()).to.eq('5', 'Expected numero value to be equals to 5');

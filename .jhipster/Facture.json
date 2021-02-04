@@ -4,10 +4,7 @@
     {
       "fieldName": "numero",
       "fieldType": "Integer",
-      "fieldValidateRules": [
-        "unique",
-        "required"
-      ]
+      "fieldValidateRules": ["unique", "required"]
     },
     {
       "fieldName": "dateDelivrance",
@@ -39,11 +36,12 @@
       "relationshipName": "facture"
     },
     {
+      "relationshipName": "user",
+      "otherEntityName": "user",
       "relationshipType": "many-to-one",
-      "otherEntityName": "client",
-      "otherEntityRelationshipName": "facture",
-      "relationshipName": "client",
-      "otherEntityField": "id"
+      "otherEntityField": "login",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "facture"
     }
   ],
   "changelogDate": "20210201165915",
@@ -56,5 +54,7 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": "*"
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
 }

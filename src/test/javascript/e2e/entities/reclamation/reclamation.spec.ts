@@ -47,7 +47,7 @@ describe('Reclamation e2e test', () => {
       reclamationUpdatePage.setObjetInput('objet'),
       reclamationUpdatePage.setLibelleInput('libelle'),
       reclamationUpdatePage.factureSelectLastOption(),
-      reclamationUpdatePage.clientSelectLastOption(),
+      reclamationUpdatePage.userSelectLastOption(),
     ]);
 
     expect(await reclamationUpdatePage.getObjetInput()).to.eq('objet', 'Expected Objet value to be equals to objet');

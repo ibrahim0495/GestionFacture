@@ -9,10 +9,10 @@ import { IReclamation, Reclamation } from 'app/shared/model/reclamation.model';
 import { ReclamationService } from './reclamation.service';
 import { IFacture } from 'app/shared/model/facture.model';
 import { FactureService } from 'app/entities/facture/facture.service';
-import { IClient } from 'app/shared/model/client.model';
-import { ClientService } from 'app/entities/client/client.service';
+import { IUser } from 'app/core/user/user.model';
+import { UserService } from 'app/core/user/user.service';
 
-type SelectableEntity = IFacture | IClient;
+type SelectableEntity = IFacture | IUser;
 
 @Component({
   selector: 'jhi-reclamation-update',
@@ -21,20 +21,20 @@ type SelectableEntity = IFacture | IClient;
 export class ReclamationUpdateComponent implements OnInit {
   isSaving = false;
   factures: IFacture[] = [];
-  clients: IClient[] = [];
+  users: IUser[] = [];
 
   editForm = this.fb.group({
     id: [],
     objet: [],
     libelle: [],
     facture: [],
-    client: [],
+    user: [],
   });
 
   constructor(
     protected reclamationService: ReclamationService,
     protected factureService: FactureService,
-    protected clientService: ClientService,
+    protected userService: UserService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -45,7 +45,7 @@ export class ReclamationUpdateComponent implements OnInit {
 
       this.factureService.query().subscribe((res: HttpResponse<IFacture[]>) => (this.factures = res.body || []));
 
-      this.clientService.query().subscribe((res: HttpResponse<IClient[]>) => (this.clients = res.body || []));
+      this.userService.query().subscribe((res: HttpResponse<IUser[]>) => (this.users = res.body || []));
     });
   }
 
@@ -55,7 +55,7 @@ export class ReclamationUpdateComponent implements OnInit {
       objet: reclamation.objet,
       libelle: reclamation.libelle,
       facture: reclamation.facture,
-      client: reclamation.client,
+      user: reclamation.user,
     });
   }
 
@@ -80,7 +80,7 @@ export class ReclamationUpdateComponent implements OnInit {
       objet: this.editForm.get(['objet'])!.value,
       libelle: this.editForm.get(['libelle'])!.value,
       facture: this.editForm.get(['facture'])!.value,
-      client: this.editForm.get(['client'])!.value,
+      user: this.editForm.get(['user'])!.value,
     };
   }
 

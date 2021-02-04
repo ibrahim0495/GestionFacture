@@ -23,7 +23,7 @@
       "etat": "Etat",
       "typeFacture": "Type Facture",
       "facture": "Facture",
-      "client": "Client"
+      "user": "User"
     }
   }
 }

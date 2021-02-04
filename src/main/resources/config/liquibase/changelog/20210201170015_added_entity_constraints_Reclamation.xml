@@ -14,11 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="facture"/>
 
-        <addForeignKeyConstraint baseColumnNames="client_id"
+        <addForeignKeyConstraint baseColumnNames="user_id"
                                  baseTableName="reclamation"
-                                 constraintName="fk_reclamation_client_id"
+                                 constraintName="fk_reclamation_user_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="client"/>
+                                 referencedTableName="jhi_user"/>
 
     </changeSet>
 </databaseChangeLog>

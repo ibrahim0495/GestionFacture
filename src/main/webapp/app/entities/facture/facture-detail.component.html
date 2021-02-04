@@ -32,11 +32,9 @@
                 <dd>
                     <span jhiTranslate="{{ 'gestFactureProjectApp.TypeFacture.' + facture.typeFacture }}">{{ facture.typeFacture }}</span>
                 </dd>
-                <dt><span jhiTranslate="gestFactureProjectApp.facture.client">Client</span></dt>
+                <dt><span jhiTranslate="gestFactureProjectApp.facture.user">User</span></dt>
                 <dd>
-                    <div *ngIf="facture.client">
-                        <a [routerLink]="['/client', facture.client?.id, 'view']">{{ facture.client?.id }}</a>
-                    </div>
+                    {{ facture.user?.login }}
                 </dd>
             </dl>
 

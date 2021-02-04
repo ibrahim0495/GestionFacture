@@ -1,6 +1,6 @@
 import { Moment } from 'moment';
 import { IReclamation } from 'app/shared/model/reclamation.model';
-import { IClient } from 'app/shared/model/client.model';
+import { IUser } from 'app/core/user/user.model';
 import { TypeFacture } from 'app/shared/model/enumerations/type-facture.model';
 
 export interface IFacture {
@@ -12,7 +12,7 @@ export interface IFacture {
   etat?: string;
   typeFacture?: TypeFacture;
   factures?: IReclamation[];
-  client?: IClient;
+  user?: IUser;
 }
 
 export class Facture implements IFacture {
@@ -25,6 +25,6 @@ export class Facture implements IFacture {
     public etat?: string,
     public typeFacture?: TypeFacture,
     public factures?: IReclamation[],
-    public client?: IClient
+    public user?: IUser
   ) {}
 }

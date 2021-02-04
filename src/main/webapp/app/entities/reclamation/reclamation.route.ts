@@ -39,7 +39,7 @@ export const reclamationRoute: Routes = [
     path: '',
     component: ReclamationComponent,
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.ADMIN],
       pageTitle: 'gestFactureProjectApp.reclamation.home.title',
     },
     canActivate: [UserRouteAccessService],

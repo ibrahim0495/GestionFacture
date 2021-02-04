@@ -1,14 +1,14 @@
 import { IFacture } from 'app/shared/model/facture.model';
-import { IClient } from 'app/shared/model/client.model';
+import { IUser } from 'app/core/user/user.model';
 
 export interface IReclamation {
   id?: number;
   objet?: string;
   libelle?: string;
   facture?: IFacture;
-  client?: IClient;
+  user?: IUser;
 }
 
 export class Reclamation implements IReclamation {
-  constructor(public id?: number, public objet?: string, public libelle?: string, public facture?: IFacture, public client?: IClient) {}
+  constructor(public id?: number, public objet?: string, public libelle?: string, public facture?: IFacture, public user?: IUser) {}
 }

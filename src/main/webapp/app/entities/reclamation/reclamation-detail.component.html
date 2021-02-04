@@ -22,11 +22,9 @@
                         <a [routerLink]="['/facture', reclamation.facture?.id, 'view']">{{ reclamation.facture?.id }}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="gestFactureProjectApp.reclamation.client">Client</span></dt>
+                <dt><span jhiTranslate="gestFactureProjectApp.reclamation.user">User</span></dt>
                 <dd>
-                    <div *ngIf="reclamation.client">
-                        <a [routerLink]="['/client', reclamation.client?.id, 'view']">{{ reclamation.client?.id }}</a>
-                    </div>
+                    {{ reclamation.user?.login }}
                 </dd>
             </dl>
 

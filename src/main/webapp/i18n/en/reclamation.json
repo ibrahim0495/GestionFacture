@@ -19,7 +19,7 @@
       "objet": "Objet",
       "libelle": "Libelle",
       "facture": "Facture",
-      "client": "Client"
+      "user": "User"
     }
   }
 }

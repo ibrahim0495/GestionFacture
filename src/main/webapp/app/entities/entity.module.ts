@@ -5,14 +5,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule.forChild([
       {
-        path: 'client',
-        loadChildren: () => import('./client/client.module').then(m => m.GestFactureProjectClientModule),
-      },
-      {
-        path: 'admin',
-        loadChildren: () => import('./admin/admin.module').then(m => m.GestFactureProjectAdminModule),
-      },
-      {
         path: 'facture',
         loadChildren: () => import('./facture/facture.module').then(m => m.GestFactureProjectFactureModule),
       },

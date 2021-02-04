@@ -9,8 +9,8 @@ import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 
 import { IFacture, Facture } from 'app/shared/model/facture.model';
 import { FactureService } from './facture.service';
-import { IClient } from 'app/shared/model/client.model';
-import { ClientService } from 'app/entities/client/client.service';
+import { IUser } from 'app/core/user/user.model';
+import { UserService } from 'app/core/user/user.service';
 
 @Component({
   selector: 'jhi-facture-update',
@@ -18,7 +18,7 @@ import { ClientService } from 'app/entities/client/client.service';
 })
 export class FactureUpdateComponent implements OnInit {
   isSaving = false;
-  clients: IClient[] = [];
+  users: IUser[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -28,12 +28,12 @@ export class FactureUpdateComponent implements OnInit {
     consommation: [],
     etat: [],
     typeFacture: [],
-    client: [],
+    user: [],
   });
 
   constructor(
     protected factureService: FactureService,
-    protected clientService: ClientService,
+    protected userService: UserService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -48,7 +48,7 @@ export class FactureUpdateComponent implements OnInit {
 
       this.updateForm(facture);
 
-      this.clientService.query().subscribe((res: HttpResponse<IClient[]>) => (this.clients = res.body || []));
+      this.userService.query().subscribe((res: HttpResponse<IUser[]>) => (this.users = res.body || []));
     });
   }
 
@@ -61,7 +61,7 @@ export class FactureUpdateComponent implements OnInit {
       consommation: facture.consommation,
       etat: facture.etat,
       typeFacture: facture.typeFacture,
-      client: facture.client,
+      user: facture.user,
     });
   }
 
@@ -93,7 +93,7 @@ export class FactureUpdateComponent implements OnInit {
       consommation: this.editForm.get(['consommation'])!.value,
       etat: this.editForm.get(['etat'])!.value,
       typeFacture: this.editForm.get(['typeFacture'])!.value,
-      client: this.editForm.get(['client'])!.value,
+      user: this.editForm.get(['user'])!.value,
     };
   }
 
@@ -113,7 +113,7 @@ export class FactureUpdateComponent implements OnInit {
     this.isSaving = false;
   }
 
-  trackById(index: number, item: IClient): any {
+  trackById(index: number, item: IUser): any {
     return item.id;
   }
 }

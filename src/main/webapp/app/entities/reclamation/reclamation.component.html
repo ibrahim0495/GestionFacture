@@ -26,7 +26,7 @@
                     <th scope="col" ><span jhiTranslate="gestFactureProjectApp.reclamation.objet">Objet</span></th>
                     <th scope="col" ><span jhiTranslate="gestFactureProjectApp.reclamation.libelle">Libelle</span></th>
                     <th scope="col" ><span jhiTranslate="gestFactureProjectApp.reclamation.facture">Facture</span></th>
-                    <th scope="col" ><span jhiTranslate="gestFactureProjectApp.reclamation.client">Client</span></th>
+                    <th scope="col" ><span jhiTranslate="gestFactureProjectApp.reclamation.user">Client</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -41,9 +41,7 @@
                         </div>
                     </td>
                     <td>
-                        <div *ngIf="reclamation.client">
-                            <a [routerLink]="['/client', reclamation.client?.id, 'view']" >{{ reclamation.client?.id }}</a>
-                        </div>
+                        {{ reclamation.user?.login }}
                     </td>
                     <td class="text-right">
                         <div class="btn-group">

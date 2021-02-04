@@ -19,11 +19,12 @@
       "otherEntityField": "id"
     },
     {
+      "relationshipName": "user",
+      "otherEntityName": "user",
       "relationshipType": "many-to-one",
-      "otherEntityName": "client",
-      "otherEntityRelationshipName": "reclamation",
-      "relationshipName": "client",
-      "otherEntityField": "id"
+      "otherEntityField": "login",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "reclamation"
     }
   ],
   "changelogDate": "20210201170015",
@@ -36,5 +37,7 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": "*"
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
 }

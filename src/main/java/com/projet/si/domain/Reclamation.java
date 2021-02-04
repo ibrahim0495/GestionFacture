@@ -1,12 +1,10 @@
 package com.projet.si.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
+import javax.persistence.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.*;
-
-import java.io.Serializable;
 
 /**
  * A Reclamation.
@@ -15,7 +13,6 @@ import java.io.Serializable;
 @Table(name = "reclamation")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Reclamation implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -34,7 +31,7 @@ public class Reclamation implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "reclamations", allowSetters = true)
-    private Client client;
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -84,18 +81,19 @@ public class Reclamation implements Serializable {
         this.facture = facture;
     }
 
-    public Client getClient() {
-        return client;
+    public User getUser() {
+        return user;
     }
 
-    public Reclamation client(Client client) {
-        this.client = client;
+    public Reclamation user(User user) {
+        this.user = user;
         return this;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setUser(User user) {
+        this.user = user;
     }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override

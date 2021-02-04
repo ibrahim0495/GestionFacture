@@ -1,18 +1,15 @@
 package com.projet.si.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.*;
-import javax.validation.constraints.*;
-
+import com.projet.si.domain.enumeration.TypeFacture;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
-
-import com.projet.si.domain.enumeration.TypeFacture;
+import javax.persistence.*;
+import javax.validation.constraints.*;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
  * A Facture.
@@ -21,7 +18,6 @@ import com.projet.si.domain.enumeration.TypeFacture;
 @Table(name = "facture")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Facture implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -54,7 +50,7 @@ public class Facture implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "factures", allowSetters = true)
-    private Client client;
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -168,18 +164,19 @@ public class Facture implements Serializable {
         this.factures = reclamations;
     }
 
-    public Client getClient() {
-        return client;
+    public User getUser() {
+        return user;
     }
 
-    public Facture client(Client client) {
-        this.client = client;
+    public Facture user(User user) {
+        this.user = user;
         return this;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setUser(User user) {
+        this.user = user;
     }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override

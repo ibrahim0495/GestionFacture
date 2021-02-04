@@ -22,20 +22,7 @@
       "fieldType": "String"
     }
   ],
-  "relationships": [
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "facture",
-      "otherEntityRelationshipName": "client",
-      "relationshipName": "facture"
-    },
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "reclamation",
-      "otherEntityRelationshipName": "client",
-      "relationshipName": "reclamation"
-    }
-  ],
+  "relationships": [],
   "changelogDate": "20210201165715",
   "entityTableName": "client",
   "dto": "no",
@@ -46,5 +33,7 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": "*"
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
 }
